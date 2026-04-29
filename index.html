@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>블로그</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">Minimal Blog</p>
+          <h1>함께 쓰는 작은 기록공간</h1>
+          <p class="subtitle">메모, 일상, 공부 기록을 모아두는 개인 블로그</p>
+        </div>
+        <div class="header-tools">
+          <input id="searchInput" type="search" placeholder="제목, 내용 검색..." />
+          <button id="allPostsButton" type="button">전체 글 보기</button>
+        </div>
+      </header>
+
+      <main>
+        <aside class="sidebar">
+          <h2>카테고리</h2>
+          <div id="categoryList" class="category-list" aria-label="카테고리 목록"></div>
+        </aside>
+
+        <section class="content-area">
+          <section id="postList" class="post-list" aria-live="polite">
+            <p class="empty-state">표시할 글이 없습니다.</p>
+          </section>
+
+          <section id="postDetail" class="post-detail hidden" aria-live="polite">
+            <button id="backToList" type="button" class="ghost">목록으로 돌아가기</button>
+            <article id="detailArticle"></article>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="postCardTemplate">
+      <article class="post-card" tabindex="0">
+        <p class="post-meta"></p>
+        <h3></h3>
+        <p class="post-excerpt"></p>
+      </article>
+    </template>
+
+    <template id="detailTemplate">
+      <header>
+        <p class="post-meta"></p>
+        <h2></h2>
+        <p class="post-summary"></p>
+      </header>
+      <div class="post-body"></div>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
